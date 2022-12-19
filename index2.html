@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> 4567 </p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('4e9e37a66b652af571c7bb07854d1d4d');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '함께 온 메시지',
+        description: '선물이 도착했어요!',
+        imageUrl:
+          'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMTlfNjMg%2FMDAxNjcxNDMwNjMzMTgz.l29ydHdcYDlbDo4HPpGWCmFytJWF9Pxn_cbAObJnkuAg.xeVXnfhBN00L31LNYjeTtpJ8E71r1LyZQB3aur6EBVQg.JPEG.a0o0b%2FKakaoTalk_20221219_133411902_01.jpg%23744x811&type=ff264_180',
+        link: {
+          mobileWebUrl: 'https://www.safekorea.go.kr',
+          webUrl: 'https://www.safekorea.go.kr',
+        },
+      },
+      social: {
+        likeCount: 112, //99999가 최대입니다
+        commentCount: 119, //99999가 최대입니다
+        sharedCount: 110, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '주문내역 보기',
+          link: {
+            mobileWebUrl: 'https://www.safekorea.go.kr',
+            webUrl: 'https://www.safekorea.go.kr',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
